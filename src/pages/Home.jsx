@@ -2,13 +2,16 @@ import React from 'react'
 import Vacation from '../components/ui/Vacation'
 import Picker from '../components/Picker'
 
-const Home = ({ currentVacation, setVacation }) => {
+const Home = ({ currentVacation, setVacation, updateLike }) => {
 
   return (
     <>
-      <Picker setVacation={setVacation} />
+      <Picker currentVacation={currentVacation} setVacation={setVacation} />
       <hr className="rowhr" />
-      <Vacation vacation={currentVacation} />
+      {
+        currentVacation  ? <Vacation vacation={currentVacation} setVacation={setVacation} updateLike={updateLike} key={currentVacation.likes} /> : <br />
+      }
+      
     </>
   )
 }

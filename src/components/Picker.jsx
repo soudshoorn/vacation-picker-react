@@ -10,7 +10,7 @@ const Picker = ({ setVacation }) => {
                 <div className="cards__output">
                 {
                     vacationsList.map((vacation) => (
-                    <Card vacation={vacation} setVacation={setVacation} key={vacation.id} />
+                    <Card vacation={vacation} setVacation={setVacation} likes={vacation.likes} key={vacation.id} />
                     ))
                 }
                 </div>

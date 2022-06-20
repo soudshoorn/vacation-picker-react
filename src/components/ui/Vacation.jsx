@@ -1,6 +1,8 @@
+import { faHeart, faHeartBroken, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from 'react'
 
-const vacationInfo = ({ vacation }) => {
+const Vacation = ({ vacation, setVacation, updateLike }) => {
     return (
         <div className="vacation">
             <div className="container">
@@ -8,7 +10,8 @@ const vacationInfo = ({ vacation }) => {
                     <div className="vacation__banner">
                         <img src={vacation.images.image1} alt="" className="vacation__banner--img" />
                         <img src={vacation.images.image2} alt="" className="vacation__banner--img" />
-                        <img src={vacation.images.image3} alt="" className="vacation__banner--img" />
+                        <img src={vacation.images.image3} alt="" className="vacation__banner--img vacation__banner--last" />
+                        <p onClick={() => setVacation(false)} className="close__button"><FontAwesomeIcon icon={faTimes} /></p>
                     </div>
                     <div className="vacation__pricetag">
                         {
@@ -27,6 +30,11 @@ const vacationInfo = ({ vacation }) => {
                         <p className="vacation__description--capital">Capital: {vacation.capital}</p>
 
                         <p className="vacation__description--para">{vacation.description}</p>
+                        <div className="vacation__description--likes">
+                            <p onClick={() => updateLike(vacation, 1)} className="likes__add"><FontAwesomeIcon icon={faHeart} /></p>
+                            {vacation.likes}
+                            <p onClick={() => updateLike(vacation, 0)} className="likes__remove"><FontAwesomeIcon icon={faHeartBroken} /></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -34,4 +42,4 @@ const vacationInfo = ({ vacation }) => {
     )
 }
 
-export default vacationInfo;
+export default Vacation;
