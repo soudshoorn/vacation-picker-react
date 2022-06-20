@@ -15,8 +15,28 @@
   margin: 0 auto;
 }
 
+textarea {
+  resize: vertical;
+}
+
+.rowhr {
+  width: 100%;
+  max-width: 1200px;
+  margin: 12px auto;
+  border-color: #f5f5f5;
+}
+
 li {
   list-style-type: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  margin: 24px 0;
 }
 
 /*
@@ -48,6 +68,165 @@ li {
 
 .nav__list--link {
   cursor: pointer;
+  color: #354259;
+  transition: all 300ms ease;
+}
+
+.nav__list--link:hover {
+  color: #C2DED1;
+}
+
+/*
+
+  PICKER
+
+*/
+
+.cards__output {
+  height: 320px;
+  display: flex;
+  gap: 12px;
+  overflow-x: scroll;
+}
+
+.card {
+  cursor: pointer;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card__img {
+  width: 200px;
+  height: 250px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.card__description--title {
+  font-size: 24px;
+  color: #354259;
+}
+
+.card__description--para {
+  font-size: 14px;
+  color: #CDC2AE;
+}
+
+/*
+
+  VACATION
+
+*/
+
+.vacation__banner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.vacation__banner--img {
+  width: calc(100% / 3);
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.vacation__description--title {
+  font-size: 40px;
+  color: #354259;
+}
+
+.vacation__description--capital {
+  font-size: 16px;
+  color: #CDC2AE;
+}
+
+.vacation__description--para {
+  margin: 12px 0;
+  max-width: 400px;
+}
+
+.vacation__pricetag {
+  margin: 4px 0;
+}
+
+.vacation__pricetag--expensive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 4px;
+  background-color: rgb(255, 88, 88);
+  width: 120px;
+  border-radius: 4px;
+}
+
+.vacation__pricetag--cheap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 4px;
+  background-color: rgb(66, 109, 77);
+  width: 120px;
+  border-radius: 4px;
+}
+
+/*
+
+  NEW VACATION
+
+*/
+
+.newvacation__form--wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newvacation form {
+  width: 400px;
+}
+
+.newvacation input {
+  margin: 4px 0;
+  padding: 8px;
+  border-radius: 24px;
+  border: 2px solid #354259;
+}
+
+.newvacation textarea {
+  margin: 4px 0;
+  padding: 8px;
+  border-radius: 12px;
+  border: 2px solid #354259;
+}
+
+.newvacation__form {
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.newvacation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 82vh;
+}
+
+.newvacation__form--submit {
+  cursor: no-drop;
+  width: 100%;
+  font-weight: 500;
+  background-color: #354259;
+  color: #CDC2AE;
 }
 
 /*
@@ -57,8 +236,18 @@ li {
 */
 
 footer {
-  position: absolute;
-  bottom: 0;
+  padding: 12px;
+  margin-top: 24px;
   width: 100%;
-  background-color: red;
+  color: #CDC2AE;
+  background-color: #354259;
+}
+
+.footer__list {
+  display: flex;
+  gap: 8px;
+}
+
+.footer__list--link {
+  cursor: pointer;
 }

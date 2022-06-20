@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import logo from '../assets/react.png';
 
 export default function Nav() {
@@ -11,8 +12,12 @@ export default function Nav() {
                         <img src={logo} alt="" />
                     </figure>
                     <ul className="nav__list">
-                        <li className="nav__list--link">Home</li>
-                        <li className="nav__list--link">New Vacation</li>
+                        <Link to="/">
+                            <li className="nav__list--link">Home</li>
+                        </Link>
+                        <Link to="/newvacation">
+                            <li className="nav__list--link">New Vacation</li>
+                        </Link>
                     </ul>
                 </div>
             </div>

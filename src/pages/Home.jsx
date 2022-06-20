@@ -1,8 +1,16 @@
 import React from 'react'
+import Vacation from '../components/ui/Vacation'
 import Picker from '../components/Picker'
 
-export default function Home() {
+const Home = ({ currentVacation, setVacation }) => {
+
   return (
-    <Picker />
+    <>
+      <Picker setVacation={setVacation} />
+      <hr className="rowhr" />
+      <Vacation vacation={currentVacation} />
+    </>
   )
 }
+
+export default Home;

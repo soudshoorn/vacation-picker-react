@@ -1,13 +1,23 @@
 import React from 'react'
+import { vacationsList } from '../vacationsList';
+import Card from './ui/Card';
 
-export default function Picker() {
-  return (
-    <section className="picker">
-        <div className="container">
-            <div className="row">
-                <h1>Picker</h1>
+const Picker = ({ setVacation }) => {
+    return (
+        <section className="picker">
+            <div className="container">
+                <div className="row">
+                <div className="cards__output">
+                {
+                    vacationsList.map((vacation) => (
+                    <Card vacation={vacation} setVacation={setVacation} key={vacation.id} />
+                    ))
+                }
+                </div>
+                </div>
             </div>
-        </div>
-    </section>
-  )
+        </section>
+    )
 }
+
+export default Picker;
